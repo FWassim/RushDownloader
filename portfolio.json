@@ -1,0 +1,22 @@
+{
+  "title": {
+    "fr": "Rush Downloader : Pipeline d'Acquisition de Rushes pour Premiere Pro",
+    "en": "RushDownloader : Asset Acquisition Pipeline for Premiere Pro"
+  },
+  "outcome": {
+    "fr": "CLI Python conçu pour extraire, ré-encoder et assainir instantanément des rushes vidéo/audio du web sans VFR ni incompatibilité de codec dans Adobe Premiere Pro.",
+    "en": "Python CLI designed to instantly extract, re-encode, and sanitize web video/audio rushes without VFR issues or codec incompatibilities in Adobe Premiere Pro."
+  },
+  "context": {
+    "fr": "Sous Adobe Premiere Pro, l'import direct de vidéos téléchargées depuis le web est un cauchemar technique : les conteneurs WebM sont mal gérés, le VFR (Variable Frame Rate) provoque des désynchronisations audio/vidéo systématiques sur la timeline, et les noms de fichiers à rallonge corrompent les liens de projet (*Missing Media*). Les convertisseurs en ligne ajoutent de la compression, limitent le bitrate et font perdre un temps précieux.\n\nRushDownloader a été développé pour résoudre définitivement cette friction : un utilitaire CLI qui télécharge, force une fréquence d'images constante (CFR), normalise le son en 48 kHz et assainit le nom du fichier pour un drag-and-drop immédiat et propre dans Premiere Pro.",
+    "en": "In Adobe Premiere Pro, importing raw web video downloads is a technical nightmare: WebM files glitch, Variable Frame Rates (VFR) cause severe audio desync on the timeline, and raw filenames create relinking errors (*Missing Media*). Online converters crush quality, cap bitrates, and waste time.\n\nRushDownloader was built to permanently solve this friction: a CLI utility that fetches peak quality, enforces Constant Frame Rates (CFR), normalizes audio to 48 kHz, and sanitizes filenames for instant, flawless drag-and-drop into Premiere Pro."
+  },
+  "action": {
+    "fr": "1. **Transcodage CFR & Conformité Premiere** : Pipeline `yt-dlp` + `FFmpeg` configuré pour convertir automatiquement les flux VFR en fréquence d'images constante (CFR), éliminant 100 % des bugs de décalage son/image dans le logiciel de montage.\n2. **Normalisation Audio & Codecs NEOF** : Extraction audio native en WAV non compressé (48 kHz / 24-bit) ou conteneurisation MP4/H.264 lisible nativement par la suite Adobe sans ré-encodage lourd.\n3. **Sanitisation des Noms & Nettoyage de Chantiers** : Purge automatique des caractères spéciaux, identifiants bruts et emojis dans les noms de fichiers pour garantir des chemins de médias stables et réutilisables dans les projets Premiere.\n4. **Workflow CLI & Vitesse Maximale** : Multi-threading et sélection automatique du meilleur flux (4K/1080p 60fps) pour récupérer n'importe quel rush en quelques secondes depuis le terminal.",
+    "en": "1. **CFR Transcoding & Premiere Compliance**: Built a `yt-dlp` + `FFmpeg` pipeline that forces Variable Frame Rates (VFR) into Constant Frame Rates (CFR), eliminating 100% of timeline audio-sync drift.\n2. **Audio Normalization & Native Codecs**: Automated extraction to uncompressed WAV (48 kHz / 24-bit) or MP4/H.264 containers natively decoded by Adobe Premiere without heavy rendering.\n3. **Filename Sanitization**: Automated removal of special characters, emojis, and raw IDs from media filenames to guarantee clean asset paths and prevent broken project links.\n4. **CLI Workflow & Max Speed**: Multi-threaded downloads with automatic peak stream selection (4K/1080p 60fps) to pull any rush from the terminal in seconds."
+  },
+  "result": {
+    "fr": "Zéro crash, zéro décalage son et zéro fichier introuvable dans Premiere Pro : les rushes sont directement utilisables sur la timeline dès la fin du téléchargement. L'outil est devenu le moteur principal d'acquisition de médias au quotidien.",
+    "en": "Zero crashes, zero audio sync drift, and zero missing media errors in Premiere Pro: rushes are timeline-ready the instant downloading completes. Fully established as the core daily media acquisition engine."
+  }
+}
